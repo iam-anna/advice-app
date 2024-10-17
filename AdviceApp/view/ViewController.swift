@@ -1,6 +1,10 @@
 import UIKit
 
-class ViewController: UIViewController {
+class AdviceViewController: UIViewController {
+    
+    var presenter: AdviceViewToPresenter?
+    
+    
     let label: UILabel = {
         let label = UILabel()
         label.text = "Tap the buttom for advice!"
@@ -28,7 +32,7 @@ class ViewController: UIViewController {
         
         view.backgroundColor = .white
         setupLayout()
-        button.addTarget(self, action: #selector(getAdvice), for: .touchUpInside)
+        button.addTarget(self, action: #selector(didTouchGetAdvice), for: .touchUpInside)
     }
 
     func setupLayout() {
@@ -50,25 +54,20 @@ class ViewController: UIViewController {
         ])
     }
     
-    @objc func getAdvice() {
-        let urlString = "https://api.adviceslip.com/advice"
-        
-        guard let url = URL(string: urlString) else { return }
-        
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, error == nil else { return }
-            
-            do {
-                let advice = try JSONDecoder().decode(Advice.self, from: data)
-                
-                DispatchQueue.main.async {
-                    self.label.text = advice.slip.advice
-                }
-            } catch {
-                print("Erro ao fazer parse")
-            }
+    @objc func didTouchGetAdvice() {
+        presenter?.getAdvice()
+    }
+}
+
+extension AdviceViewController: AdvicePresenterToView {
+    func showAdvice(advice: String) {
+        DispatchQueue.main.async {
+            self.label.text = advice
         }
-        task.resume()
+    }
+    
+    func showError(error: Error) {
+        // TODO: Add alert
     }
 }
 

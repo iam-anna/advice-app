@@ -15,6 +15,9 @@
 		2882D28B2CADD0C100D3F88E /* AdviceAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882D28A2CADD0C100D3F88E /* AdviceAppTests.swift */; };
 		2882D2952CADD0C100D3F88E /* AdviceAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882D2942CADD0C100D3F88E /* AdviceAppUITests.swift */; };
 		2882D2972CADD0C100D3F88E /* AdviceAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882D2962CADD0C100D3F88E /* AdviceAppUITestsLaunchTests.swift */; };
+		2891138D2CB6FD1200B89F0A /* AdviceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2891138C2CB6FD1200B89F0A /* AdviceProtocols.swift */; };
+		289113902CB7042E00B89F0A /* AdvicePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2891138F2CB7042E00B89F0A /* AdvicePresenter.swift */; };
+		289C91172CC1755600E7F6E4 /* AdviceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289C91162CC1755600E7F6E4 /* AdviceInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		2882D2902CADD0C100D3F88E /* AdviceAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdviceAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2882D2942CADD0C100D3F88E /* AdviceAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdviceAppUITests.swift; sourceTree = "<group>"; };
 		2882D2962CADD0C100D3F88E /* AdviceAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdviceAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2891138C2CB6FD1200B89F0A /* AdviceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdviceProtocols.swift; sourceTree = "<group>"; };
+		2891138F2CB7042E00B89F0A /* AdvicePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvicePresenter.swift; sourceTree = "<group>"; };
+		289C91162CC1755600E7F6E4 /* AdviceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdviceInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +103,12 @@
 		2882D2722CADD0B900D3F88E /* AdviceApp */ = {
 			isa = PBXGroup;
 			children = (
+				289C91152CC1754000E7F6E4 /* interactor */,
+				2891138E2CB7041600B89F0A /* presenter */,
+				2891138B2CB6FCEE00B89F0A /* protocols */,
+				2891138A2CB6FB8100B89F0A /* view */,
 				2882D2732CADD0B900D3F88E /* AppDelegate.swift */,
 				2882D2752CADD0B900D3F88E /* SceneDelegate.swift */,
-				2882D2772CADD0B900D3F88E /* ViewController.swift */,
 				2882D27C2CADD0C000D3F88E /* Assets.xcassets */,
 				2882D27E2CADD0C000D3F88E /* LaunchScreen.storyboard */,
 				2882D2812CADD0C000D3F88E /* Info.plist */,
@@ -122,6 +131,38 @@
 				2882D2962CADD0C100D3F88E /* AdviceAppUITestsLaunchTests.swift */,
 			);
 			path = AdviceAppUITests;
+			sourceTree = "<group>";
+		};
+		2891138A2CB6FB8100B89F0A /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2882D2772CADD0B900D3F88E /* ViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		2891138B2CB6FCEE00B89F0A /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2891138C2CB6FD1200B89F0A /* AdviceProtocols.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		2891138E2CB7041600B89F0A /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2891138F2CB7042E00B89F0A /* AdvicePresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		289C91152CC1754000E7F6E4 /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				289C91162CC1755600E7F6E4 /* AdviceInteractor.swift */,
+			);
+			path = interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,7 +295,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				289C91172CC1755600E7F6E4 /* AdviceInteractor.swift in Sources */,
+				289113902CB7042E00B89F0A /* AdvicePresenter.swift in Sources */,
 				2882D2782CADD0B900D3F88E /* ViewController.swift in Sources */,
+				2891138D2CB6FD1200B89F0A /* AdviceProtocols.swift in Sources */,
 				2882D2742CADD0B900D3F88E /* AppDelegate.swift in Sources */,
 				2882D2762CADD0B900D3F88E /* SceneDelegate.swift in Sources */,
 			);
